@@ -31,3 +31,9 @@ class ModelCreatorTest(TestCase):
 		for elem in list_hotel:
 			self.assertEqual(len(elem),3)
 
+	"""
+	Further tests:
+	All data has only characters
+	Data is separated by comas
+	Data has no headers
+	"""

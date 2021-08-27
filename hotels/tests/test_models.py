@@ -25,6 +25,7 @@ class CityTests(TestCase):
 	the code has only 3 letters
 	the code follows international standards
 	new cities are unique
+	no weird characters in the city name
 	""" 
 
 
@@ -46,4 +47,7 @@ class HotelTests(TestCase):
 	new hotels are unique in the city
 	the city of a hotel exist
 	the code of the hotel is unique
+	the code has 5 letters
+	the code corresponds to a city + 2 more numbers
+	no weird characters in the hotel name
 	"""
