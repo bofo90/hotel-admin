@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hotels in city</title>
+  </head>
+  <body>
+    {% if hotels_in_city %}
+        <ul>
+        {% for h in hotels_in_city %}
+            <li>{{ h.name }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hotels in {{ city.name }} are available.</p>
+    {% endif %}
+  </body>
+</html>
