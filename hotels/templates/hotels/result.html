@@ -14,5 +14,9 @@
     {% else %}
         <p>No hotels in {{ city.name }} are available.</p>
     {% endif %}
+    <form action="{% url 'hotels:index' %}" method="get">  
+    {% csrf_token %}
+    <input type="submit" value="Back">
+    </form>
   </body>
 </html>
