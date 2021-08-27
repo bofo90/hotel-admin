@@ -5,14 +5,17 @@
     <title>Hotel Admin</title>
   </head>
   <body>
-    {% if all_cities %}
-        <ul>
-        {% for c in all_cities %}
-            <li><a href="{% url 'hotels:result' c.name %}">{{ c.name }}</a></li>
+    <form action="{% url 'hotels:select' %}" method="post">  
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>Please choose a city</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        {% for city in all_cities %}
+            <input type="radio" name="city" id="city{{ forloop.counter }}" value="{{ city.id }}">
+            <label for="city{{ forloop.counter }}">{{ city.name }}</label><br>
         {% endfor %}
-        </ul>
-    {% else %}
-        <p>No cities are available.</p>
-    {% endif %}
+    </fieldset>
+    <input type="submit" value="Vote">
+    </form>
   </body>
 </html>
