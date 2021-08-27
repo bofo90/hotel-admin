@@ -5,7 +5,9 @@ from django.conf import settings
 from .models import City, Hotel
 
 def download_from_api(url):
-
+    """
+    Read files from url and create data. Return -1 if files could not be found.
+    """
     with requests.Session() as s:
         download = s.get(url, auth=(settings.CSV_USERNAME, settings.CSV_PASSWORD))
         if (download.status_code == 401):
@@ -17,7 +19,9 @@ def download_from_api(url):
 
 
 def create_city_models():
-
+    """
+    Create models of cities with code and name from list
+    """
     list_cities = download_from_api(settings.CITY_CSV)
 
     if list_cities == -1:
@@ -32,7 +36,9 @@ def create_city_models():
 
 
 def create_hotel_models():
-
+    """
+    Create models of hotels with code, name and link to a city
+    """
     list_hotels = download_from_api(settings.HOTEL_CSV)
 
     if list_hotels == -1:
