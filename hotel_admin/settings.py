@@ -123,6 +123,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+# Variables that control the extraction of the csv files
+
+HOTEL_CSV = 'http://rachel.maykinmedia.nl/djangocase/hotel.csv'
+CITY_CSV = 'http://rachel.maykinmedia.nl/djangocase/city.csv'
+CSV_USERNAME = 'python-demo'
+CSV_PASSWORD = 'claw30_bumps'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
