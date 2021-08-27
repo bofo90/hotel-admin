@@ -10,10 +10,8 @@
     <fieldset>
         <legend><h1>Please choose a city</h1></legend>
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-        {% for city in all_cities %}
-            <input type="radio" name="city" id="city{{ forloop.counter }}" value="{{ city.id }}">
-            <label for="city{{ forloop.counter }}">{{ city.name }}</label><br>
-        {% endfor %}
+        {{ form }}
+<!--         <input type="text" name="city"> -->
     </fieldset>
     <input type="submit" value="Select">
     </form>
