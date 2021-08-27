@@ -17,10 +17,6 @@ def index(request):
         "form": form,
     }
 
-    # def get_queryset(self):
-    #   """ Return all the cities for display """
-    #   return City.objects.order_by('name')
-
     return render(request, 'hotels/index.html', context)
 
 def select_city(request):
