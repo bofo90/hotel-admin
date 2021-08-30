@@ -20,13 +20,16 @@ def index(request):
     return render(request, 'hotels/index.html', context)
 
 def select_city(request):
+    """
+    Additional view to make the request of the hotels for the selected city.
+    """
 
     form = CityForm(request.POST)
     
     try:
         selected_choice = City.objects.get(name=request.POST['city_name'])
     except City.DoesNotExist:
-         return render(request, 'hotels/index.html', {
+        return render(request, 'hotels/index.html', {
             'error_message': "The city does not exist.",
             'all_cities' : City.objects.order_by('name'),
             'form' : CityForm(),
